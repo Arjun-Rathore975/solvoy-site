@@ -66,6 +66,21 @@
     opacity: 0.8;
   }
 
+  /* Survey button */
+  .survey-btn {
+    display: inline-block;
+    margin-top: 2.2rem;
+    padding: 0.85rem 1.6rem;
+    border: 1px solid rgba(243, 241, 247, 0.5);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .survey-btn:hover { background: rgba(243, 241, 247, 0.12); border-color: var(--text); }
+  .survey-btn:focus-visible { outline: 2px solid var(--glow); outline-offset: 4px; }
+
   @media (prefers-reduced-motion: no-preference) {
     .orb.a { animation: drift-a 38s ease-in-out infinite alternate; }
     .orb.b { animation: drift-b 46s ease-in-out infinite alternate; }
@@ -74,8 +89,9 @@
     @keyframes drift-b { to { transform: translate(-20vw, 14vh) scale(0.9); } }
     @keyframes drift-c { to { transform: translate(-25vw, -30vh) scale(1.25); } }
 
-    h1, p { animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
+    h1, p, .survey-btn { animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
     p { animation-delay: 0.5s; }
+    .survey-btn { animation-delay: 1s; }
     @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
   }
 </style>
@@ -92,6 +108,7 @@
     <div>
       <h1>coming soon</h1>
       <p>with love from Sydney</p>
+      <a class="survey-btn" href="https://forms.gle/iR6QyNSDQ16tVfNr8" target="_blank" rel="noopener">Take our 60-second survey</a>
     </div>
   </main>
 </body>
